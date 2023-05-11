@@ -1,0 +1,11 @@
+Prototype is a creational design pattern that lets you copy existing objects without making your code dependent on their classes.
+
+Here are some common scenarios where you might want to use the Prototype pattern:
+
+1. Complex object creation: If you have a complex object that requires a lot of setup or initialization, using the Prototype pattern can save time and resources by allowing you to clone an existing object and modify it as needed.
+
+2. Dynamic object creation: If you need to create objects at runtime based on user input or other factors, the Prototype pattern can provide a way to create new objects without requiring you to write new code or define new classes.
+
+3. Immutable objects: If you have an immutable object, you cannot modify its properties after it has been created. Using the Prototype pattern can allow you to create the object with all its properties set, and then return a new copy of the object once it has been fully constructed.
+
+4. Resource-intensive object creation: If creating a new instance of an object is resource-intensive (such as initializing a database connection), using the Prototype pattern can save time and resources by allowing you to clone an existing object instead of creating a new one.
