@@ -9,3 +9,7 @@ Here are some common scenarios where you might want to use the Prototype pattern
 3. Immutable objects: If you have an immutable object, you cannot modify its properties after it has been created. Using the Prototype pattern can allow you to create the object with all its properties set, and then return a new copy of the object once it has been fully constructed.
 
 4. Resource-intensive object creation: If creating a new instance of an object is resource-intensive (such as initializing a database connection), using the Prototype pattern can save time and resources by allowing you to clone an existing object instead of creating a new one.
+
+ Use the Prototype pattern when your code shouldn’t depend on the concrete classes of objects that you need to copy.
+
+ Use the pattern when you want to reduce the number of subclasses that only differ in the way they initialize their respective objects.
