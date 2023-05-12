@@ -10,6 +10,12 @@ Here are some common scenarios where you might want to use the Prototype pattern
 
 4. Resource-intensive object creation: If creating a new instance of an object is resource-intensive (such as initializing a database connection), using the Prototype pattern can save time and resources by allowing you to clone an existing object instead of creating a new one.
 
- Use the Prototype pattern when your code shouldn’t depend on the concrete classes of objects that you need to copy.
+- Use the Prototype pattern when your code shouldn’t depend on the concrete classes of objects that you need to copy.
+- Use the pattern when you want to reduce the number of subclasses that only differ in the way they initialize their respective objects.
 
- Use the pattern when you want to reduce the number of subclasses that only differ in the way they initialize their respective objects.
+Conceptual Example
+Let’s try to figure out the Prototype pattern using an example based on the operating system’s file system. The OS file system is recursive: the folders contain files and folders, which may also include files and folders, and so on.
+
+Each file and folder can be represented by an inode interface. inode interface also has the clone function.
+
+Both file and folder structs implement the print and clone functions since they are of the inode type. Also, notice the clone function in both file and folder. The clone function in both of them returns a copy of the respective file or folder. During the cloning, we append the suffix “_clone” to the name field.

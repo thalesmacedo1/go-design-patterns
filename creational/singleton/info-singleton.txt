@@ -9,3 +9,19 @@ Here are some common scenarios where you might want to use the singleton pattern
 3. Logging: If you have a logging class that you want to use throughout your program, you can use a singleton to ensure that all parts of the program are logging to the same file or database.
 
 4. Caching: If you have a cache that needs to be shared among different parts of your program, you can use a singleton to ensure that there is only one instance of the cache and that all parts of the program are accessing the same cache.
+
+-  Use the Singleton pattern when a class in your program should have just a single instance available to all clients; for example, a single database object shared by different parts of the program.
+-  Use the Singleton pattern when you need stricter control over global variables.
+
+Conceptual Example
+Usually, a singleton instance is created when the struct is first initialized. To make this happen, we define the getInstance method on the struct. This method will be responsible for creating and returning the singleton instance. Once created, the same singleton instance will be returned every time the getInstance is called.
+
+How about goroutines? The singleton struct must return the same instance whenever multiple goroutines are trying to access that instance. Because of this, it’s very easy to get the singleton design pattern implemented wrong. The example below illustrates the right way to create a singleton.
+
+Some points worth noting:
+
+There is a nil-check at the start for making sure singleInstance is empty first time around. This is to prevent expensive lock operations every time the getinstance method is called. If this check fails, then it means that the singleInstance field is already populated.
+
+The singleInstance struct is created within the lock.
+
+There is another nil-check after the lock is acquired. This is to ensure that if more than one goroutine bypasses the first check, only one goroutine can create the singleton instance. Otherwise, all goroutines will create their own instances of the singleton struct.

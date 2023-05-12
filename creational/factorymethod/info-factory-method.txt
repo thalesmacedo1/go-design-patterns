@@ -10,5 +10,16 @@ Here are some common scenarios where you might want to use the factory method pa
 
 4. Object creation with localization: If you need to create objects that are localized to different languages or regions, the Factory Method pattern can provide a way to create objects with the appropriate language or region settings without requiring you to write separate code for each language or region.
 
-Use the Factory Method when you want to provide users of your library or framework with a way to extend its internal components.
-Use the Factory Method when you want to save system resources by reusing existing objects instead of rebuilding them each time.
+
+- Use the Factory Method when you don’t know beforehand the exact types and dependencies of the objects your code should work with.
+- Use the Factory Method when you want to provide users of your library or framework with a way to extend its internal components.
+- Use the Factory Method when you want to save system resources by reusing existing objects instead of rebuilding them each time.
+
+Conceptual Example
+It’s impossible to implement the classic Factory Method pattern in Go due to lack of OOP features such as classes and inheritance. However, we can still implement the basic version of the pattern, the Simple Factory.
+
+In this example, we’re going to build various types of weapons using a factory struct.
+
+First, we create the iGun interface, which defines all methods a gun should have. There is a gun struct type that implements the iGun interface. Two concrete guns—ak47 and musket—both embed gun struct and indirectly implement all iGun methods.
+
+The gunFactory struct serves as a factory, which creates guns of the desired type based on an incoming argument. The main.go acts as a client. Instead of directly interacting with ak47 or musket, it relies on gunFactory to create instances of various guns, only using string parameters to control the production.
