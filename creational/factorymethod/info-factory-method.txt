@@ -1,0 +1,14 @@
+Factory Method is a creational design pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.
+
+Here are some common scenarios where you might want to use the factory method pattern:
+
+1. Object creation with dependencies: If creating an object requires other objects or resources to be initialized, the Factory Method pattern can be used to abstract away the details of the initialization process and provide a clean interface for creating objects.
+
+2. Object creation based on configuration: If the type of object to be created is determined by configuration settings or other runtime factors, the Factory Method pattern can provide a way to create the object without requiring you to write conditional logic or switch statements.
+
+3. Object creation with extensibility: If you need to add new types of objects to your application in the future, the Factory Method pattern can provide a way to add new subclasses without modifying existing code.
+
+4. Object creation with localization: If you need to create objects that are localized to different languages or regions, the Factory Method pattern can provide a way to create objects with the appropriate language or region settings without requiring you to write separate code for each language or region.
+
+Use the Factory Method when you want to provide users of your library or framework with a way to extend its internal components.
+Use the Factory Method when you want to save system resources by reusing existing objects instead of rebuilding them each time.
